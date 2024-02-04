@@ -1,52 +1,61 @@
 /* W02-Task - Profile Home Page */
 
-/* Step 1 - Setup type tasks - no code required */
 
 /* Step 2 - Variables */
-let fullName = 'Bunmi osadare';
-const currentYear = 2024;
-let profilePicture = 'images/profile.png';
-
-
+const fullName = "Bunmi Osaadre";
+const  currentYear = '2024';
+const profilePicture = 'images/profile.png';
 
 
 /* Step 3 - Element Variables */
 
-
 const nameElement = document.getElementById('name');
 const foodElement = document.getElementById('food');
 const yearElement = document.querySelector('#year');
-const imageElement = document.querySelector('mprofile');
-
+const imageElement = document.querySelector('img');
 
 
 /* Step 4 - Adding Content */
+nameElement.innerHTML = `<strong>${fullName}</strong>`
 
-nameElement.innerHTML = `<strong>${fullName}</strong>`;
-yearElement.textContent = currentYear;
-imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute('alt', `Profile of ${fullName}`);
+window.onload = () => {
 
+    function favFoods(foodArray) {
+        foodElement.innerHTML = foodArray.reduce((acc, curr) => {
+            acc += `<br>${curr}`
+            return acc
+        }, '')
+    }
 
+    nameElement.innerHTML = `<strong>${fullName}</strong>`;
+    yearElement.textContent = currentYear;
+    imageElement.setAttribute('src', profilePicture)
+    imageElement.setAttribute('alt', `Profile image of ${fullName}`)
 
+    /* Step 5 - Array */
 
-/* Step 5 - Array */
+    const favoriteFoods = []
 
+    favoriteFoods.push('Pasta,Rice, Beans')
+    favFoods(favoriteFoods)
 
+    let newFavoriteFoods = 'ice cream,Pizza,Chocolate'
 
-const favFoods = ['Pizza', 'Pasta', 'Burger', 'Chocolate'];
+    favoriteFoods.push(newFavoriteFoods)
+    favFoods(favoriteFoods)
 
-foodElement.innerHTML = favFoods;
+    favoriteFoods.pop();
+    favFoods(favoriteFoods)
 
-const newFavFoods = 'Lobster';  
-favFoods.push(newFavFoods);
+    favoriteFoods.push(' Pasta,Rice, Beans')
+    favFoods(favoriteFoods)
 
-foodElement.innerHTML += `<br>${favFoods}`;
+    favoriteFoods.shift()
+    favFoods(favoriteFoods)
 
-favFoods.shift();
+    newFavoriteFoods = 'Ice cream,Pizza,Chocolate'
 
-foodElement.innerHTML += `<br>${favFoods}`;
-
-favFoods.pop();
-
-foodElement.innerHTML += `<br>${favFoods}`;
+    favoriteFoods.push(newFavoriteFoods)
+    favFoods(favoriteFoods)
+   
+}
