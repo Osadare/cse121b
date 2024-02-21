@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSE 121b | Final Project - weather application  </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+          rel="stylesheet">
+        <link rel="stylesheet" href="styles/project.css">
+      </head>
+<body>
+    <nav>
+        <ul id="menu">
+          <li><a id="toggleMenu">&equiv;</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="w01-task.html">W1 Task</a></li>
+          <li><a href="w03-task.html">W3 Task</a></li>
+          <li><a href="w04-task.html">W4 Task</a></li>
+          <li><a href="w05-task.html">W5 Task</a></li>
+          <li><a href="project.html" class="active">Project</a></li>
+        </ul>
+      </nav> 
+       
+      
+    <div class="weather-application">
+        <div class="search">
+            <input type="text" placeholder="Search for a city">
+            <button>Search</button>
+        </div>
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+        <div class="weather">
+            <img src="images/rain.png" class="weather-icon">
+            <h2 class="city"</h2>
+            <h3 class="temp"</h3>
+            <h4>Weather Forcast</h4>
+        </div> 
+         
+    </div>
+    <script src="scripts/project.js"></script> 
+    <footer>
+        &copy;<span id="year"></span> | Final  |  project | CSE 121b
+      </footer>  
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+      </script> 
+
+</body>
+</html>
